@@ -7,11 +7,21 @@
 <div class="container">
   <h2 class="fw-bold py-4">Comics Create</h2>
 
+  @if($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li> {{$error}} </li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
   <form action="{{ route('comics.store') }}" method="POST">
     @csrf
 
     <div class="mb-3">
-      <label for="field_title" class="form-label">Title</label>
+      <label for="field_title" class="form-label is-invalid">Title</label>
       <input type="text" name="title" class="form-control" id="field_title">
     </div>
 
@@ -46,8 +56,8 @@
     </div>
 
     <div>
-      <button class="btn btn-primary" type="reset">Reset</button>
-      <button class="btn btn-secondary" type="submit">Crea</button>
+      <button class="btn btn-secondary" type="reset">Reset</button>
+      <button class="btn btn-primary" type="submit">Crea</button>
     </div>
   </form>
 
