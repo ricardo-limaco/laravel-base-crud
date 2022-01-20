@@ -23,5 +23,12 @@
     @endforeach
   </ul>
 
+  {{-- <form action="{{ route('comics.destroy', ['id' => $comic->id])}}" method="POST">
+    @csrf
+
+    @method('delete')
+
+    <input type="submit" value="cancella">
+  </form> --}}
 </div>
 @endsection
