@@ -1,11 +1,11 @@
 @extends("layouts.default")
 
-@section("page_title", "Comics Create")
+@section("page_title", "Aggiungi Comics")
 
 
 @section("content")
 <div class="container">
-  <h2 class="fw-bold py-4">Comics Create</h2>
+  <h2 class="fw-bold pb-4">Aggiungi Comics</h2>
 
   @if($errors->any())
     <div class="alert alert-danger">
@@ -27,7 +27,7 @@
 
     <div class="mb-3">
       <label for="field_description" class="form-label">Description</label>
-      <input type="text" name="description" class="form-control" id="field_description">
+      <textarea rows="5" type="text" name="description" class="form-control" id="exampleFormControlTextarea1"></textarea>
     </div>
     
     <div class="mb-3">
@@ -56,7 +56,7 @@
     </div>
 
     <div>
-      <button class="btn btn-secondary" type="reset">Reset</button>
+      <button class="btn btn-link" type="reset">Reset</button>
       <button class="btn btn-primary" type="submit">Crea</button>
     </div>
   </form>

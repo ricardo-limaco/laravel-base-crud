@@ -3,7 +3,6 @@
 use App\Comic;
 use Illuminate\Database\Seeder;
 
-
 class ComicsTableSeeder extends Seeder
 {
     /**

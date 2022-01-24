@@ -5,7 +5,7 @@
 
 @section("content")
 <div class="container">
-  <h2 class="fw-bold py-4">Comics Edit</h2>
+  <h2 class="fw-bold pb-4">Comics Edit</h2>
 
   @if($errors->any())
   <div class="alert alert-danger">
@@ -15,11 +15,11 @@
       @endforeach
     </ul>
   </div>
-@endif
+  @endif
 
-<form action="{{ route('comics.update', ['id' => $comic->id]) }}" method="POST">
+<form action="{{ route('comics.update', $comic->id) }}" method="POST">
   @csrf
-  @method('put')
+  @method('PUT')
 
   <div class="mb-3">
     <label for="field_title" class="form-label is-invalid">Title</label>
@@ -28,7 +28,7 @@
 
   <div class="mb-3">
     <label for="field_description" class="form-label">Description</label>
-    <input type="text" name="description" class="form-control" id="field_description" value="{{ $comic->description }}">
+    <textarea  rows="5" type="text" name="description" class="form-control" id="exampleFormControlTextarea1">{{ $comic->description }}</textarea>
   </div>
   
   <div class="mb-3">
@@ -57,8 +57,8 @@
   </div>
 
   <div>
-    <button class="btn btn-secondary" type="reset">Reset</button>
-    <button class="btn btn-primary" type="submit">Crea</button>
+    <button class="btn btn-link" type="reset">Reset</button>
+    <button class="btn btn-primary" type="submit">Aggiorna</button>
   </div>
 </form>
 
